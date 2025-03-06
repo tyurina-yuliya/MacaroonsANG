@@ -12,8 +12,7 @@ import { AdvantageComponent } from './components/advantage/advantage.component';
 import { ButtonEffectsDirective } from './directives/button-effects.directive';
 import { TextLimitationPipe } from './pipes/text-limitation.pipe';
 import { PhoneFormatPipe } from './pipes/phone-format.pipe';
-
-
+import {NgxMaskModule} from "ngx-mask";
 
 
 @NgModule({
@@ -25,12 +24,13 @@ import { PhoneFormatPipe } from './pipes/phone-format.pipe';
     AdvantageComponent,
     ButtonEffectsDirective,
     TextLimitationPipe,
-    PhoneFormatPipe
+    PhoneFormatPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [ProductService],
   bootstrap: [AppComponent, HeaderComponent, FooterComponent]
