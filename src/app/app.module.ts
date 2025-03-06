@@ -13,6 +13,9 @@ import { ButtonEffectsDirective } from './directives/button-effects.directive';
 import { TextLimitationPipe } from './pipes/text-limitation.pipe';
 import { PhoneFormatPipe } from './pipes/phone-format.pipe';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
