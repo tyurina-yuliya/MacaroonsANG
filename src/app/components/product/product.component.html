@@ -1,0 +1,14 @@
+<div class="menu__item">
+  <img src="assets/images/{{product.image}}" alt="macaroon">
+  <div class="menu__item-title">{{product.title}}</div>
+  <div class="item__info-actions">
+    <div class="item__info">
+      <div class="count">1 шт</div>
+      <div class="price">{{product.price | currency: '':'': '1.2-2'}} руб.</div>
+    </div>
+    <div class="info__actions-button">
+      <button class="btn menu__btn" (click)="addProductToCart()" ButtonEffects >Заказать</button>
+    </div>
+  </div>
+</div>
+

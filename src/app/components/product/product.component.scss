@@ -1,0 +1,51 @@
+.menu__item {
+  padding: 94px 21px 0 21px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.menu__item img {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease;
+  max-width: 100%;
+}
+
+.menu__item:hover img {
+  transform: scale(1.10) translate(-44%);
+}
+
+.menu__item-title {
+  font-size: 18px;
+  font-family: Tavolga-free, sans-serif;
+  color: rgb(255, 255, 255);
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+.item__info-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+
+.count {
+  font-size: 15px;
+  font-family: Gilroy-regular, sans-serif;
+  color: rgb(255, 255, 255);
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 15px;
+  font-family: Gilroy-regular, sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.menu__btn {
+  width: 130px;
+  height: 50px;
+}

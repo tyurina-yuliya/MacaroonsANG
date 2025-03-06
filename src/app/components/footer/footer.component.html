@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="container footer__container">
+    <div class="footer-rights">
+      <div class="logo">
+        <img class="footer-logo" src="assets/images/logo.png" alt="website-logo">
+      </div>
+      <div class="rights">Все права защищены, 2020</div>
+    </div>
+    <a [href]="instagramLink" class="instagram">
+      <div class="instagram__image">
+        <img src="assets/images/instagram.png" alt="instagram_icon">
+      </div>
+      <div class="instagram__text">Мы в Instagram</div>
+    </a>
+    <a class="footer-contacts contacts" [href]="'tel: ' + phoneNumber | phoneFormat">{{phoneNumber | phoneFormat}}</a>
+  </div>
+</footer>

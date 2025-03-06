@@ -1,0 +1,104 @@
+<section class="main">
+  <div class="container main__container">
+    <div class="main__info">
+      <div class="main__info-title">
+        Мягкие французские
+        пироженки Macaroons
+      </div>
+      <div class="main__info-text">
+        Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
+      </div>
+      <div class="main__action">
+        <button class="btn main__btn" (click)="scrollTo(menuElement)" ButtonEffects >Выбрать маракун</button>
+      </div>
+    </div>
+    <div class="main__info-image">
+      <img src="assets/images/main-image.png" alt="Макаруны">
+    </div>
+  </div>
+</section>
+
+<section class="advantages" id="advantages" #aboutUs>
+  <div class="container advantages__container">
+    <div class="story__block">
+      <div class="story__title">
+        Мы печём для вас вкуснейшие макаруны уже более 10 лет
+      </div>
+      <div class="story__text">
+        Все пироженки мы готовим только из натуральных и качественных продуктов, без консервантов,
+        ароматизаторов, красителей. Используем в приготовлении сливочное масло 82,5%, без дрожжей,
+        маргарина, разрыхлителей и улучшителей муки.
+      </div>
+    </div>
+    <div class="advantages__image">
+      <img class="advantages__image-img" src="assets/images/advantages-img.png" alt="Картинка-Макаруна">
+    </div>
+    <div class="advantages_list">
+
+      <advantage *ngFor="let advantage of advantages" [advantage]="advantage"></advantage>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="menu" #menuElement>
+  <div class="container menu__container">
+    <div class="menu__container-title">Выберите свой макарун</div>
+    <div class="menu__items-list">
+
+      <product *ngFor="let product of products" [product]="product" (addToCartEvent)="addToCard($event, orderElement)"></product>
+
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order" #orderElement>
+  <div class="container order__container">
+    <div class="order__images">
+      <img class="order__image1" src="assets/images/order_strawberry1.png" alt="strawberry1">
+      <img class="order__image2" src="assets/images/order_macaron.png" alt="strawberry2">
+    </div>
+    <div class="order__menu">
+      <div class="order__title">Закажите макарун!</div>
+      <div class="order__text">Выберите понравившийся макарун, заполните форму и ожидайте звонка нашего пекаря!
+      </div>
+      <label class="text-us">
+        <div class="text-us-title">Ваш выбор</div>
+        <input class="text-us-input" type="text" placeholder="Напишите, что хотите заказать..." [(ngModel)]="formValues.productTitle">
+      </label>
+      <div class="order__details">
+        <label>
+          <div class="order__details-title">
+            Заполните данные для заказа
+          </div>
+          <div class="order__details-name">
+            <input class="order__inputs" type="text" placeholder="Ваше имя" [(ngModel)]="formValues.name">
+          </div>
+        </label>
+        <label>
+          <div class="order__details-number">
+            <input class="order__inputs" type="text" placeholder="+375(__)___-__-__" [(ngModel)]="formValues.phone">
+          </div>
+        </label>
+        <div class="order__details-btn">
+          <button class="btn order__btn" (click)="createOrder()" ButtonEffects >Оформить заказ</button>
+        </div>
+      </div>
+      <div class="order__menu-image">
+        <img src="assets/images/order_strawberry2.png" alt="strawberry2">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="extra-gift" *ngIf="showPresent">
+  <img class="gift-image" src="assets/images/cart.png" alt="TakeYourGift">
+  <div class="gift-count">{{cartService.count}}</div>
+  <div class="gift-text">
+    {{productService.totalPrice | currency: '':'': '1.2-2'}} руб.
+    <div class="triangle-right"></div>
+    <div class="triangle-right-background"></div>
+  </div>
+</div>
+
